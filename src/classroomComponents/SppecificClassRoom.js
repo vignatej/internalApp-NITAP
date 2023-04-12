@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import Description from "./Description.js";
 import Posts from "./Posts.js";
 import Bucket from "./Bucket.js";
@@ -38,6 +38,9 @@ const SppecificClassRoom = () => {
     event.preventDefault();
     setIndex(2);
   };
+  const goToConFerencing = (event)=>{
+    event.preventDefault(); 
+  }
   return (
     <div className="m-10">
       <div className="mb-10 flex flex-col sm:flex-row items-center justify-between">
@@ -57,10 +60,18 @@ const SppecificClassRoom = () => {
           </button>
           <button
             onClick={setBucket}
-            className="bg-thirdCol rounded-lg px-3 py-2 text-center"
+            className="bg-thirdCol rounded-lg px-3 py-2 text-center mr-3"
           >
             BUCKET
           </button>
+          
+          <button
+            onClick={goToConFerencing}
+            className="bg-thirdCol rounded-lg px-3 my-2 py-2 text-center"
+          >
+            <NavLink to="conferencing">CONFERENCING</NavLink>
+          </button>
+          
         </div>
       </div>
       {index===0 && <Description classRoom={classRoom} />}
