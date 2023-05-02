@@ -1,6 +1,6 @@
-
+import { baseUrl } from "../fixed";
 const EventTile = (props) => {
-  const imgUrl = `http://127.0.0.1:8000${props.item.image}`;
+  const imgUrl = `${baseUrl}${props.item.image}`;
   const date = new Date(props.item.startDateTime);
   const currDate = new Date();
   const endDate = new Date(props.item.endDateTime);
@@ -23,8 +23,8 @@ const EventTile = (props) => {
   const hours = startHours % 12;
   return (
     <>
-      <div className="bg-cardCol rounded-xl mb-10 mx-4 max-w-lg overflow-hidden">
-        <img src={imgUrl} alt="event img" className="w-full" />
+      <div className="bg-cardCol rounded-xl mb-10 max-w-lg overflow-hidden h-full">
+        <img src={imgUrl} alt="event img" className="w-full h-64" />
         <div className="p-4">
           <div className="flex justify-between">
             <h3 className="text-xl font-extrabold capitalize">
@@ -45,7 +45,7 @@ const EventTile = (props) => {
             at <span className="font-bold">{props.item.venue}</span>
           </p>
           <div className="my-4"></div>
-          <p>{props.item.description.slice(0, 100)}</p>
+          <p>{props.item.description.slice(0, 200)}</p>
         </div>
       </div>
     </>

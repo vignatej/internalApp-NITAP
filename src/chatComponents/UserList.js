@@ -8,7 +8,7 @@ const UserList = () => {
   const [currFocusProfileId, setCurrFocusProfileId] = useState(null);
 
   const fetchData = useCallback(async () => {
-    const response = await fetch(`${baseUrl}users/getAllProfiles/`);
+    const response = await fetch(`${baseUrl}/users/getAllProfiles/`);
     if (!response.ok) {
       console.log("can fetch all profiles");
     }

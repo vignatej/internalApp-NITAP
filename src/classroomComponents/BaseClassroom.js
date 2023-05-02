@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import { baseUrl } from "../fixed";
 const BaseClassroom = () => {
   const [classrooms, setClassrooms] = useState([]);
 
   useEffect(() => {
     const fetchClassRooms = async () => {
       const resp = await fetch(
-        "http://127.0.0.1:8000/classroom/getAllClasses",
+        `${baseUrl}/classroom/getAllClasses`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,

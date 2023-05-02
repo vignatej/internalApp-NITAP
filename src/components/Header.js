@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import { baseUrl } from "../fixed";
 const Header = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const userDetails = useSelector((state) => state.auth.authDetails);
@@ -16,7 +16,7 @@ const Header = () => {
         </p>
         {isAuthenticated && (
           <img
-            src={`http://127.0.0.1:8000${userDetails["profilePhoto"]}`}
+            src={`${baseUrl}${userDetails["profilePhoto"]}`}
             alt=".."
             className="rounded-full w-9 h-9 mr-6"
           />

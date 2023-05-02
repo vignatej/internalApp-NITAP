@@ -1,6 +1,6 @@
 import AddAnswer from "./AddAnswer";
 import Answers from "./Answers";
-
+import { baseUrl } from "../fixed";
 const Questions = (props) => {
   const questions = props.questions;
   if (questions.length === 0) {
@@ -15,7 +15,7 @@ const Questions = (props) => {
             <div className="bg-cardCol rounded-xl p-3 mb-5">
               <div className="flex flex-row items-center">
                 <img
-                  src={`http://127.0.0.1:8000${ques.user.profilePhoto}`}
+                  src={`${baseUrl}${ques.user.profilePhoto}`}
                   alt=".."
                   className="w-12 h-12 rounded-full"
                 />

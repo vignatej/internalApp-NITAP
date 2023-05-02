@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
-
+import { baseUrl } from "../fixed";
 import "react-quill/dist/quill.snow.css";
 
 const Posts = () => {
@@ -8,7 +8,7 @@ const Posts = () => {
   const [posts, SetPosts] = useState([]);
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch(`http://127.0.0.1:8000/classroom/getPosts`, {
+      const res = await fetch(`${baseUrl}/classroom/getPosts`, {
         method: "POST",
         body: JSON.stringify({ classId: classId }),
         headers: {
@@ -84,7 +84,7 @@ const Posts = () => {
               <div className="px-3">
                 <div className="flex flex-row items-center">
                   <img
-                    src={`http://127.0.0.1:8000${item.created_by.profilePhoto}`}
+                    src={`${baseUrl}${item.created_by.profilePhoto}`}
                     alt=".."
                     className="w-12 h-12 rounded-full"
                   />
@@ -113,7 +113,7 @@ const Posts = () => {
                       return (
                         <div key={file.id}>
                           <a
-                            href={`http://127.0.0.1:8000${file.file}`}
+                            href={`${baseUrl}${file.file}`}
                             target="_blank"
                             rel="noopener noreferrer"
                           >

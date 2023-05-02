@@ -1,7 +1,9 @@
+import { baseUrl } from "../fixed";
 import { chatActions } from "./chat-slice";
+import { wsurl } from "../fixe1";
 var soc;
 export const connectToSocket = (id, CorS = 0, data = {}) => {
-  const socket = new WebSocket(`ws://127.0.0.1:8000/oneonechat/${id}/`);
+  const socket = new WebSocket(`${wsurl}/oneonechat/${id}/`);
   soc = socket;
   if (CorS === 0) {
     return (dispatch) => {
@@ -33,7 +35,7 @@ export default soc;
 
 export const getInitialMsg = () => {
   return async (dispatch) => {
-    const res = await fetch("http://127.0.0.1:8000/chat/room/", {
+    const res = await fetch(`${baseUrl}/chat/room/`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access")}`,
       },

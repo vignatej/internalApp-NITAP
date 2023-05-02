@@ -4,7 +4,7 @@ import BaseQil from "./BaseQil";
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-
+import { baseUrl } from "../fixed";
 const AddClass = () => {
   const classroom_ref = useRef();
   const code_ref = useRef();
@@ -61,7 +61,7 @@ const AddClass = () => {
     form.append("teacher_name", teacher);
     form.append("description", desc);
     const startSubmit = async (form) => {
-      const resp = await fetch("http://127.0.0.1:8000/classroom/addClassroom", {
+      const resp = await fetch(`${baseUrl}/classroom/addClassroom`, {
         method: "POST",
         body: form,
         headers: {

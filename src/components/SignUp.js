@@ -42,7 +42,7 @@ const SignUp = (props) => {
   };
 
   return (
-    <div className="px-8 text-lg mx-32">
+    <div className="px-8 text-lg max-w-2xl">
       <p className="text-3xl pb-7 pt-5 font-bold">SignUp Form</p>
       <form onSubmit={formSubmitHandler}>
         <TextInput name="username" type="text" ref={username_input_ref} />

@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getStory } from "../store/story-actions";
-
+import { baseUrl } from "../fixed";
 const AddAnswer = (props) => {
   const dispatch = useDispatch();
   const par = useParams();
@@ -28,7 +28,7 @@ const AddAnswer = (props) => {
     const details = new FormData();
     details.append("id", props.id);
     details.append("answer", answer);
-    const response = await fetch("http://127.0.0.1:8000/addAnswer", {
+    const response = await fetch(`${baseUrl}/addAnswer`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access")}`,

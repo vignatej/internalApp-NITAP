@@ -3,13 +3,15 @@ import { NavLink, useParams } from "react-router-dom";
 import Description from "./Description.js";
 import Posts from "./Posts.js";
 import Bucket from "./Bucket.js";
+import { baseUrl } from "../fixed.js";
+
 const SppecificClassRoom = () => {
   const id = useParams().id;
   const [classRoom, setDet] = useState({});
   const [index, setIndex] = useState(0);
   useEffect(() => {
     const fetchDetails = async () => {
-      const resp = await fetch(`http://127.0.0.1:8000/classroom/getAClass`, {
+      const resp = await fetch(`${baseUrl}/classroom/getAClass`, {
         method: "POST",
         body: JSON.stringify({ classID: id }),
         headers: {

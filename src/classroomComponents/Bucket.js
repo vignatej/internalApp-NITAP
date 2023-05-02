@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { baseUrl } from "../fixed";
 const Bucket = () => {
   const classId = useParams().id;
   const [items, setItems] = useState([]);
   useEffect(() => {
     const fetChBuc = async () => {
-      const res = await fetch(`http://127.0.0.1:8000/classroom/getBucket`, {
+      const res = await fetch(`${baseUrl}/classroom/getBucket`, {
         method: "POST",
         body: JSON.stringify({ classId: classId }),
         headers: {
@@ -66,7 +67,7 @@ const Bucket = () => {
         return (
           <div key={file.id}>
             <a
-              href={`http://127.0.0.1:8000${file.file}`}
+              href={`${baseUrl}${file.file}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -87,7 +88,7 @@ const Bucket = () => {
               <tr key={file.id}>
                 <td>
                   <a
-                    href={`http://127.0.0.1:8000${file.file}`}
+                    href={`${baseUrl}${file.file}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -107,7 +108,7 @@ const Bucket = () => {
                         </div>
                       </div>
                       <img
-                        src={`http://127.0.0.1:8000${file.created_by.profilePhoto}`}
+                        src={`${baseUrl}/${file.created_by.profilePhoto}`}
                         alt=".."
                         className="w-8 h-8 rounded-full"
                       />

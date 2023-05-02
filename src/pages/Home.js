@@ -22,8 +22,9 @@ const Home = () => {
     <>
       <Header/>
       <div className="text-center mt-60 mb-96">
-        <p className="text-2xl text-white">welcome to INTERNAL APP NIT AP</p>
-          <p>here u can use any of our services for a connected </p>
+        <p className="text-2xl text-white">Welcome to INTERNAL APP NIT AP</p>
+          <p>Here u can use any of our services to get connected </p>
+          <p className="text-sm">please scroll down</p>
       </div>
 
       <div className="mx-6 grid lg:grid-cols-3 md:grid-cols-2">

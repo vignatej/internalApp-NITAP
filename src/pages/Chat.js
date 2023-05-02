@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import ChatUserSingle from "../chatComponents/ChatUserSingle";
 import { onNewMsg } from "../store/chat-actions";
-
+import { baseUrl } from "../fixed";
+import { wsurl } from "../fixe1";
 const Chat = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   // const connected = useSelector((state)=>state.chat.connected);
@@ -16,7 +17,7 @@ const Chat = () => {
   const [currUserName, setCurrUserName] = useState(null);
   const [websocket, setWebsocket] = useState(null);
   useEffect(() => {
-    const socketUrl = `ws://127.0.0.1:8000/oneonechat/${localStorage.getItem(
+    const socketUrl = `${wsurl}/oneonechat/${localStorage.getItem(
       "profileId"
     )}/`;
     const socket = new WebSocket(socketUrl);
@@ -70,7 +71,7 @@ const Chat = () => {
               <div className="flex items-center mb-5">
                 <img
                   alt="prof"
-                  src={`http://127.0.0.1:8000${currUserName.profilePhoto}`}
+                  src={`${baseUrl}${currUserName.profilePhoto}`}
                   className="w-10 h-10 rounded-full"
                 ></img>
                 <div className="pl-3">

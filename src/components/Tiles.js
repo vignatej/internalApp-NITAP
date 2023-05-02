@@ -3,22 +3,24 @@ import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getStories } from "../store/story-actions";
 import { useSelector } from "react-redux";
-
-const Tiles = () => {
-  const dispatch = useDispatch();
-  const tilesList = useSelector((state)=>state.stories.stories);
-  useEffect(()=>{
-    dispatch(getStories());
-  },[dispatch]);
+import { baseUrl } from "../fixed";
+const Tiles = (props) => {
+  // const dispatch = useDispatch();
+  // const tilesList = useSelector((state)=>state.stories.stories);
+  // useEffect(()=>{
+  //   dispatch(getStories());
+  // },[dispatch]);
+  const tilesList = props.tiles;
   return (
     <>
       {tilesList.map((tile) => {
         return (
           <NavLink to={`/Placements/Story/${tile.id}`} key={tile.id}>
-            <div className="rounded-xl bg-cardCol m-4 p-6">
+           
+            <div className="rounded-xl bg-cardCol p-6 h-full">
               <div className="flex flex-row items-center">
                 <img
-                  src={`http://127.0.0.1:8000${tile.user.profilePhoto}`}
+                  src={`${baseUrl}${tile.user.profilePhoto}`}
                   alt=".."
                   className="w-16 h-16 rounded-full"
                 />

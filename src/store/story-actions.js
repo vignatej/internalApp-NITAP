@@ -18,7 +18,7 @@ export const getStories = () => {
 export const getStory = (id) => {
   return async (dispatch) => {
     console.log("getting story" + id);
-    const resp = await fetch(`${baseUrl}story/${id}`);
+    const resp = await fetch(`${baseUrl}/story/${id}`);
     if (!resp.ok) {
       throw new Error("err occured while fetching story");
     }

@@ -9,7 +9,7 @@ const Events = () => {
   const [slides, setSlides] = useState({});
   useEffect(() => {
     const fetchData = async () => {
-      const r = await fetch(`${baseUrl}events`);
+      const r = await fetch(`${baseUrl}/events`);
       if (!r.ok) {
         throw new Error("can't fetch");
       }
@@ -27,7 +27,7 @@ const Events = () => {
           up.push(res[i]);
         } else if (st <= dat && dat <= en) {
           liv.push(res[i]);
-          sli.push({url:`http://127.0.0.1:8000${res[i].image}`})
+          sli.push({url:`${baseUrl}${res[i].image}`})
         } else {
           com.push(res[i]);
         }setSlides((prev)=>{
@@ -45,7 +45,7 @@ const Events = () => {
     <>
       <Header />
       {/* {events.live && slides && <PhotosSlider imagess={slides} />} */}
-      <div className="mx-10 grid lg:grid-cols-3 md:grid-cols-2">
+      <div className="mx-24 grid lg:grid-cols-3 md:grid-cols-2 gap-8 ">
         {events.live.map((item) => (
           <EventTile item={item} key={item.id} />
         ))}

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { baseUrl } from "../fixed";
 import ReactQuill from "react-quill";
 const AddPost = () => {
   const classId = useParams().id;
@@ -42,12 +43,15 @@ const AddPost = () => {
     event.preventDefault();
     const formData = new FormData();
     const desc = description;
+    if(desc===""){
+      return;
+    }
     formData.append("description", desc);
     formData.append("classId", classId);
     console.log(formData);
     selectedFiles.forEach((file) => formData.append(`${Math.random()}`, file));
     const sendPost = async () => {
-      const res = await fetch("http://127.0.0.1:8000/classroom/addPost", {
+      const res = await fetch(`${baseUrl}/classroom/addPost`, {
         method: "POST",
         body: formData,
         headers: {

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { baseUrl } from "../fixed";
 import ReactQuill from "react-quill";
 const ChangeDescription = () => {
   const id = useParams().id;
@@ -39,7 +40,7 @@ const ChangeDescription = () => {
   function SubmitHandler() {
     const sub = async () => {
       const res = await fetch(
-        "http://127.0.0.1:8000/classroom/changeDescription",
+        `${baseUrl}/classroom/changeDescription`,
         {
           method: "POST",
           body: JSON.stringify({ classId: id, description: description }),
@@ -58,7 +59,7 @@ const ChangeDescription = () => {
   }
   useEffect(() => {
     const fetchDetails = async () => {
-      const resp = await fetch(`http://127.0.0.1:8000/classroom/getAClass`, {
+      const resp = await fetch(`${baseUrl}/classroom/getAClass`, {
         method: "POST",
         body: JSON.stringify({ classID: id }),
         headers: {

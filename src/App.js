@@ -9,6 +9,10 @@ import { startAppLogin } from "./store/auth-actions";
 import Chat from "./pages/Chat";
 import Events from "./pages/Events";
 import Classroom from "./pages/Classroom";
+import Main from "./examComponents/Main";
+import Login_user from "./examComponents/Login_user";
+import Login_admin from "./examComponents/Login_admin";
+import CreateElection from "./examComponents/CreateElection";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -24,6 +28,13 @@ function App() {
       <Route path="/events" element={<Events />} />
       <Route path="/classroom/*" element={<Classroom />} />
     </Routes>
+    // <Routes>
+    //   <Route path="/*" element={<Main />} />
+    //   <Route path="/userSignup" element={<Login_user />} />
+    //   <Route path="/adminSignup" element={<Login_admin />} />
+    //   <Route path="/createElection" element={<CreateElection />} />
+      
+    // </Routes>
   );
 }
 

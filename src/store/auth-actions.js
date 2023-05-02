@@ -1,10 +1,10 @@
 import { authActions } from "./auth-slice";
-
+import { baseUrl } from "../fixed";
 import { getInitialMsg } from "./chat-actions";
 export const userSignUp = (details, username, password) => {
   return async (dispatch) => {
     console.log(username, password);
-    const response = await fetch("http://127.0.0.1:8000/users/create-user/", {
+    const response = await fetch(`${baseUrl}/users/create-user/`, {
       method: "POST",
       body: details,
     });
@@ -12,7 +12,7 @@ export const userSignUp = (details, username, password) => {
       return new Error("Yep, please enter all details and correct details");
     }
 
-    const responseN = await fetch("http://127.0.0.1:8000/users/token/", {
+    const responseN = await fetch(`${baseUrl}/users/token/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const userSignUp = (details, username, password) => {
     localStorage.setItem("refresh", responseA.refresh);
     localStorage.setItem("access", responseA.access);
 
-    const userDetails = await fetch("http://127.0.0.1:8000/users/getDetails/", {
+    const userDetails = await fetch(`${baseUrl}/users/getDetails/`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access")}`,
       },
@@ -46,7 +46,7 @@ export const userSignUp = (details, username, password) => {
 
 export const userLogin = (username, password) => {
   return async (dispatch) => {
-    const res = await fetch("http://127.0.0.1:8000/users/token/", {
+    const res = await fetch(`${baseUrl}/users/token/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export const userLogin = (username, password) => {
     localStorage.setItem("refresh", response.refresh);
     localStorage.setItem("access", response.access);
     console.log("item is " + localStorage.getItem("access"));
-    const userDetails = await fetch("http://127.0.0.1:8000/users/getDetails/", {
+    const userDetails = await fetch(`${baseUrl}/users/getDetails/`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access")}`,
       },
@@ -88,7 +88,7 @@ export const startAppLogin = () => {
       return;
     }
     console.log("123");
-    const res = await fetch("http://127.0.0.1:8000/users/token/refresh/", {
+    const res = await fetch(`${baseUrl}/users/token/refresh/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -105,7 +105,7 @@ export const startAppLogin = () => {
     const response = await res.json();
     localStorage.setItem("access", response["access"]);
 
-    const userDetails = await fetch("http://127.0.0.1:8000/users/getDetails/", {
+    const userDetails = await fetch(`${baseUrl}/users/getDetails/`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access")}`,
       },

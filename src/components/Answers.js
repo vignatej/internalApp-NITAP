@@ -1,3 +1,4 @@
+import { baseUrl } from "../fixed";
 const Answers = (props) => {
   const answers = props.answers;
 
@@ -12,7 +13,7 @@ const Answers = (props) => {
           <div key={ans.id}>
             <div className="flex flex-row items-center mb-3">
               <img
-                src={`http://127.0.0.1:8000${ans.user.profilePhoto}`}
+                src={`${baseUrl}${ans.user.profilePhoto}`}
                 alt=".."
                 className="w-8 h-8 rounded-full"
               />

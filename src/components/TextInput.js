@@ -4,7 +4,7 @@ const TextInput = React.forwardRef((props, ref) => {
     <>
       <p>{props.name}</p>
       <p className="text-black">
-        <input className="w-64 h-8 rounded-none" type={props.type} name={props.name} ref={ref} />
+        <input className=" rounded-none bg-cardCol h-10 w-full text-zinc-50" type={props.type} name={props.name} ref={ref} />
       </p>
     </>
   );

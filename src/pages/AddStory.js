@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { baseUrl } from "../fixed";
 import { getStories } from "../store/story-actions";
 const AddStory=()=>{
     const storyRef= useRef();
@@ -13,7 +14,7 @@ const AddStory=()=>{
             return;
         }
         console.log(story);
-        const resp = await fetch('http://127.0.0.1:8000/addStory',{
+        const resp = await fetch(`${baseUrl}/addStory`,{
             method:"POST",
             headers: {
                 "Content-Type": "application/json",

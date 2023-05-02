@@ -19,7 +19,7 @@ const Auth = () => {
     setCurr((prev) => !prev);
   };
   return (
-    <div className="text-white border-solid border-2 border-sky-500">
+    <div className="text-white border-solid border-2 border-sky-500 max-w-2xl mx-auto my-10">
       {curr ? <SignUp change={change} /> : <Login change={change} />}
       {/* <p onClick={goBack}>go back</p> */}
     </div>

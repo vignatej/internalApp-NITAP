@@ -4,13 +4,14 @@ import Questions from "./Questions";
 import AddQuestion from "./AddQuestion";
 import { useDispatch, useSelector } from "react-redux";
 import { getStory } from "../store/story-actions";
+import { baseUrl } from "../fixed";
 const Story = () => {
   const par = useParams();
   const dispatch = useDispatch();
   const [start, setStart] = useState(true);
   // const fetchFiles = useCallback(async () => {
   //   try {
-  //     const resp = await fetch(`http://127.0.0.1:8000/story/${par.id}`);
+  //     const resp = await fetch(`${baseUrl}/story/${par.id}`);
   //     if (!resp.ok) {
   //       throw new Error("err occured while fetching story");
   //     }
@@ -53,7 +54,7 @@ const Story = () => {
         <div>
           <div className="flex flex-row items-center">
             <img
-              src={`http://127.0.0.1:8000${story.user.profilePhoto}`}
+              src={`${baseUrl}${story.user.profilePhoto}`}
               alt=".."
               className="w-16 h-16 rounded-full"
             />
