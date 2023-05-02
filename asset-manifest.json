@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/internalApp-NITAP/static/css/main.7edf06ed.css",
+    "main.js": "/internalApp-NITAP/static/js/main.fef1d55f.js",
+    "static/media/classroomHome.jpg": "/internalApp-NITAP/static/media/classroomHome.191ed2f987d5214115d7.jpg",
+    "static/media/eventsHome.png": "/internalApp-NITAP/static/media/eventsHome.b67c4c7c093266a77e4e.png",
+    "static/media/authImage.png": "/internalApp-NITAP/static/media/authImage.b21c748cef73a0f52cf4.png",
+    "static/media/chatHome.jpg": "/internalApp-NITAP/static/media/chatHome.8a291339afcffc42d37b.jpg",
+    "static/media/placementsMain.png": "/internalApp-NITAP/static/media/placementsMain.88cf58b970361f59e925.png",
+    "index.html": "/internalApp-NITAP/index.html",
+    "main.7edf06ed.css.map": "/internalApp-NITAP/static/css/main.7edf06ed.css.map",
+    "main.fef1d55f.js.map": "/internalApp-NITAP/static/js/main.fef1d55f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7edf06ed.css",
+    "static/js/main.fef1d55f.js"
+  ]
+}
