@@ -21,12 +21,12 @@ function App() {
   }, [dispatch]);
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path="/auth" element={<Auth />} />
-      <Route path="/placements/*" element={<Placements />} />
-      <Route path="/chat" element={<Chat />} />
-      <Route path="/events" element={<Events />} />
-      <Route path="/classroom/*" element={<Classroom />} />
+      <Route exact path='/' element={<Home />} />
+      <Route exact path="/auth" element={<Auth />} />
+      <Route exact path="/placements/*" element={<Placements />} />
+      <Route exact path="/chat" element={<Chat />} />
+      <Route exact path="/events" element={<Events />} />
+      <Route exact path="/classroom/*" element={<Classroom />} />
     </Routes>
     // <Routes>
     //   <Route path="/*" element={<Main />} />

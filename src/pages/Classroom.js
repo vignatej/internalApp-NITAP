@@ -18,17 +18,17 @@ const Classroom = () => {
     <>
       <Header />
       <Routes>
-        <Route
+        <Route exact
           path="/"
           element={
             <>{isAuthenticated ? <BaseClassroom /> : <p>Please login</p>}</>
           }
         ></Route>
-        <Route path="/addClass" element={<AddClass />}></Route>
-        <Route path="/:id" element={<SppecificClassRoom />} ></Route>
-        <Route path="/:id/addPost" element={<AddPost />} ></Route>
-        <Route path="/:id/changeDescription" element={<ChangeDescription />}></Route>
-        <Route path="/:id/conferencing" element={<Conferencing  />}></Route>
+        <Route exact path="/addClass" element={<AddClass />}></Route>
+        <Route exact path="/:id" element={<SppecificClassRoom />} ></Route>
+        <Route exact path="/:id/addPost" element={<AddPost />} ></Route>
+        <Route exact path="/:id/changeDescription" element={<ChangeDescription />}></Route>
+        <Route exact path="/:id/conferencing" element={<Conferencing  />}></Route>
       </Routes>
     </>
   );

@@ -45,7 +45,7 @@ const Placements = () => {
     <>
       <Header />
       <Routes>
-        <Route
+        <Route exact
           path="/"
           element={
             <>
@@ -71,8 +71,8 @@ const Placements = () => {
             </>
           }
         ></Route>
-        <Route path="/addStory" element={<AddStory />}></Route>
-        <Route path="/story/:id" element={<Story />}></Route>
+        <Route exact path="/addStory" element={<AddStory />}></Route>
+        <Route exact path="/story/:id" element={<Story />}></Route>
       </Routes>
     </>
   );
