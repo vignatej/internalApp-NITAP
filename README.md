@@ -1,74 +1,23 @@
-OFFICIAL LINK OF PROJECT: - "https://internalapp-nitap.web.app/"
+Tech used: React, Django, Redux, tailwind Css, Postgres, Firebase, Azure, Quill text Editor.
 
+<h3>Description:</h3>
+It Contains 3 mini apps.
+<ol>
+  <li>
+    Placement Stories: seniors can post their placement stories and juniors can question them and get answers for their questions.
+  </li>
+  <li>
+    Events: students can get info about all events happening in college.  
+  </li>
+  <li>
+    Classroom: Each classroom has a description tab, posts, conferencing and bucket tab. For description we will use quill wysiwyg text editor which comes with almost all of Microsoft word features for text editing. We can change the size of text and add images, videos and iframes to description. Each Post will have a description( uses quill text editor) and a few files. Bucket will contain all files required for class. Conferencing helps students to join video conferencing(jitsi meet). I have integrated jitsi meet(an open source project ) with our application for conferencing.    
+  </li>
+</ol>
 
+Github Frontend: "https://github.com/vignatej/internalApp-NITAP".
 
-# Getting Started with Create React App
+Github Backend: "https://github.com/vignatej/InternalApp-Backend".
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Working video: https://youtu.be/x0bYlP7pd1M
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# InternalApp-Backend
